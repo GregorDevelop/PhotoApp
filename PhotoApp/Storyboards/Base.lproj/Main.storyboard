@@ -26,6 +26,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="681-bZ-bsr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -81,6 +84,9 @@ Create your username:</string>
                                         <state key="normal" title="Confirm">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="confirmTapped:" destination="Him-cn-CXu" eventType="touchUpInside" id="bk6-Xf-PRb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -97,6 +103,9 @@ Create your username:</string>
                             <constraint firstItem="BH5-0z-aC8" firstAttribute="centerY" secondItem="RhN-s1-ftJ" secondAttribute="centerY" constant="-27" id="v9q-Cr-Zbk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="usernameTextField" destination="UxT-Uo-nV5" id="1jX-pf-YZ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XW7-4N-Cvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,6 +134,9 @@ Create your username:</string>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="ryo-wd-15c"/>
+                    <connections>
+                        <outlet property="tableView" destination="5bB-xm-mrI" id="mTr-Ic-hFx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtZ-kS-AUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,6 +176,9 @@ Create your username:</string>
                                 <state key="normal" title="Sign Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="cMc-S6-fnW" eventType="touchUpInside" id="0f0-Rx-hRp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VyU-zn-wBr"/>
@@ -182,7 +197,7 @@ Create your username:</string>
         <!--Tab Bar Controller-->
         <scene sceneID="ZIW-6s-W8p">
             <objects>
-                <tabBarController id="TV2-np-DBu" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" id="TV2-np-DBu" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HAf-5v-Cfi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
