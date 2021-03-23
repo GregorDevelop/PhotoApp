@@ -45,6 +45,8 @@ extension LoginViewController: FUIAuthDelegate {
                 }
                 else {
                     
+                    LocalStorageService.saveUser(userId: currentUser!.userId, username: currentUser!.username)
+                    
                     let tabBarVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController)
                     self.view.window?.rootViewController = tabBarVC
                     self.view.window?.makeKeyAndVisible()

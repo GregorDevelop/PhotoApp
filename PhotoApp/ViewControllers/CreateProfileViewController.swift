@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CreateProfileViewController: UIViewController {
 
@@ -19,6 +20,23 @@ class CreateProfileViewController: UIViewController {
     }
     
     @IBAction func confirmTapped(_ sender: Any) {
+        
+        if Auth.auth().currentUser == nil {return}
+        
+        let usernameFromTF = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if usernameFromTF == nil || usernameFromTF == "" {return}
+        
+        UserService.createProfile(userIdFromAuth: Auth.auth().currentUser!.uid, usernameFromTF: usernameFromTF!) { (newUser) in
+            
+            if newUser != nil {
+                
+                LocalStorageService.saveUser(userId: newUser!.userId, username: newUser!.username)
+                
+                let tabTabVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController)
+                self.view.window?.rootViewController = tabTabVC
+                self.view.window?.makeKeyAndVisible()
+            }
+        }
         
     }
     

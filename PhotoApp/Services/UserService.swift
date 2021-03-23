@@ -12,6 +12,30 @@ import FirebaseFirestore
 class UserService {
    
     
+    static func createProfile(userIdFromAuth: String, usernameFromTF: String, completion: @escaping (PhotoUser?) -> Void) {
+        
+        let db = Firestore.firestore()
+        
+        let profiledata = ["username": usernameFromTF]
+        
+        db.collection("users").document(userIdFromAuth).setData(profiledata) { (error) in
+            
+            if error == nil {
+                
+                var newUser = PhotoUser()
+                newUser.userId = userIdFromAuth
+                newUser.username = usernameFromTF
+                
+                completion(newUser)
+            }
+            else {
+                completion(nil)
+            }
+        }
+        
+    }
+    
+    
     static func retrieveProfile(userIdFromAuth: String, completion: @escaping(PhotoUser?) -> Void) {
         
         let db = Firestore.firestore()

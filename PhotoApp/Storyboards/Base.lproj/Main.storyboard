@@ -216,7 +216,7 @@ Create your username:</string>
         <!--Navigation Controller-->
         <scene sceneID="P67-Pf-aFT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sEM-rM-e99" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="loginNavController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sEM-rM-e99" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="afH-sC-iXK">
                         <autoresizingMask key="autoresizingMask"/>
