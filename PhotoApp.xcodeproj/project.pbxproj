@@ -13,6 +13,9 @@
 		B01865B72609D5520061C110 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01865B62609D5520061C110 /* LocalStorageService.swift */; };
 		B01865BA2609DE1A0061C110 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01865B92609DE1A0061C110 /* MainTabBarController.swift */; };
 		B01865BE2609E57A0061C110 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01865BD2609E57A0061C110 /* PhotoService.swift */; };
+		B01865C12609F3920061C110 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01865C02609F3920061C110 /* PhotoCell.swift */; };
+		B01865C42609F51E0061C110 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01865C32609F51E0061C110 /* Photo.swift */; };
+		B01865C72609FCF90061C110 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01865C62609FCF90061C110 /* ImageCacheService.swift */; };
 		B0E76ED62609B65B00079FDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E76ED52609B65B00079FDC /* AppDelegate.swift */; };
 		B0E76ED82609B65B00079FDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E76ED72609B65B00079FDC /* SceneDelegate.swift */; };
 		B0E76EDD2609B65B00079FDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E76EDB2609B65B00079FDC /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 		B01865B62609D5520061C110 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		B01865B92609DE1A0061C110 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B01865BD2609E57A0061C110 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		B01865C02609F3920061C110 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		B01865C32609F51E0061C110 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B01865C62609FCF90061C110 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		B0E76ED22609B65B00079FDC /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76ED52609B65B00079FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0E76ED72609B65B00079FDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				B01865AE2609CD920061C110 /* PhotoUser.swift */,
+				B01865C32609F51E0061C110 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 				B01865AB2609CCBF0061C110 /* UserService.swift */,
 				B01865B62609D5520061C110 /* LocalStorageService.swift */,
 				B01865BD2609E57A0061C110 /* PhotoService.swift */,
+				B01865C62609FCF90061C110 /* ImageCacheService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 		B0E76EEF2609B77B00079FDC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B01865C02609F3920061C110 /* PhotoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B01865C12609F3920061C110 /* PhotoCell.swift in Sources */,
 				B0E76EF52609BBD700079FDC /* CreateProfileViewController.swift in Sources */,
 				B0E76EF22609BBC400079FDC /* LoginViewController.swift in Sources */,
 				B01865BA2609DE1A0061C110 /* MainTabBarController.swift in Sources */,
@@ -313,6 +323,8 @@
 				B01865AC2609CCBF0061C110 /* UserService.swift in Sources */,
 				B01865BE2609E57A0061C110 /* PhotoService.swift in Sources */,
 				B01865B32609CF260061C110 /* Constants.swift in Sources */,
+				B01865C42609F51E0061C110 /* Photo.swift in Sources */,
+				B01865C72609FCF90061C110 /* ImageCacheService.swift in Sources */,
 				B01865AF2609CD920061C110 /* PhotoUser.swift in Sources */,
 				B0E76ED62609B65B00079FDC /* AppDelegate.swift in Sources */,
 				B0E76ED82609B65B00079FDC /* SceneDelegate.swift in Sources */,

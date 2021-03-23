@@ -12,8 +12,35 @@ import FirebaseFirestore
 
 class PhotoService {
     
+    static func retrievePhoto(completion: @escaping([Photo]) -> Void) {
     
-    static func savePhoto(selectedImage: UIImage) {
+        let db = Firestore.firestore()
+        
+        db.collection("photos").getDocuments { (snapshot, error) in
+            
+            if error != nil {return}
+            
+            var photos = [Photo]()
+            
+            let documents = snapshot?.documents
+            if let documents = documents {
+                
+                for doc in documents {
+                    
+                    let p = Photo(snapshot: doc)
+                    if p != nil {
+                        photos.insert(p!, at: 0)
+                    }
+                    
+                }
+            }
+            completion(photos)
+        }
+        
+    }
+    
+    
+    static func savePhoto(selectedImage: UIImage, completion: @escaping(Double) -> Void) {
         
         let photoData = selectedImage.jpegData(compressionQuality: 1)
         if photoData == nil {return}
@@ -25,12 +52,18 @@ class PhotoService {
         
         let ref = Storage.storage().reference().child("images/\(userId!)/\(filename)")
         
-        ref.putData(photoData!, metadata: nil) { (metadata, error) in
+        let uploadTask = ref.putData(photoData!, metadata: nil) { (metadata, error) in
              
             if error == nil {
                 
                 createDatabaseEntry(ref: ref)
             }
+        }
+        uploadTask.observe(.progress) { (taskSnapshot) in
+            
+            let pct = Double(taskSnapshot.progress!.completedUnitCount) / Double(taskSnapshot.progress!.totalUnitCount)
+            
+            completion(pct)
         }
         
     }

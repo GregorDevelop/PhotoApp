@@ -122,6 +122,51 @@ Create your username:</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-xm-mrI">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo Cell" rowHeight="300" id="tP7-w9-8wm" customClass="PhotoCell" customModule="PhotoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tP7-w9-8wm" id="83v-cv-f9J">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-95-4ke">
+                                                    <rect key="frame" x="40" y="31" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-22-dXP">
+                                                    <rect key="frame" x="40" y="62" width="334" height="176"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="176" id="7qa-sv-lBt"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScM-3v-rCW">
+                                                    <rect key="frame" x="40" y="248" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vsM-22-dXP" secondAttribute="trailing" constant="20" id="2ox-83-K72"/>
+                                                <constraint firstItem="VEX-95-4ke" firstAttribute="top" secondItem="83v-cv-f9J" secondAttribute="topMargin" constant="20" id="CCn-Rt-AhH"/>
+                                                <constraint firstItem="VEX-95-4ke" firstAttribute="leading" secondItem="83v-cv-f9J" secondAttribute="leadingMargin" constant="20" id="DES-Ln-qDL"/>
+                                                <constraint firstItem="vsM-22-dXP" firstAttribute="leading" secondItem="83v-cv-f9J" secondAttribute="leadingMargin" constant="20" id="PVd-zT-5l6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ScM-3v-rCW" secondAttribute="bottom" constant="20" id="dcF-2Z-aKd"/>
+                                                <constraint firstItem="vsM-22-dXP" firstAttribute="top" secondItem="VEX-95-4ke" secondAttribute="bottom" constant="10" id="f7i-rQ-E43"/>
+                                                <constraint firstItem="ScM-3v-rCW" firstAttribute="leading" secondItem="83v-cv-f9J" secondAttribute="leadingMargin" constant="20" id="spl-yB-sYw"/>
+                                                <constraint firstItem="ScM-3v-rCW" firstAttribute="top" secondItem="vsM-22-dXP" secondAttribute="bottom" constant="10" id="yYJ-jA-1iA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="ScM-3v-rCW" id="eo1-Yi-39q"/>
+                                            <outlet property="photoImageView" destination="vsM-22-dXP" id="aSr-o5-Ifw"/>
+                                            <outlet property="usernameLabel" destination="VEX-95-4ke" id="N6e-tu-Xke"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Ro-H1-vix"/>
@@ -149,10 +194,55 @@ Create your username:</string>
                     <view key="view" contentMode="scaleToFill" id="uhm-hG-dJm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="imk-n3-Fs1">
+                                <rect key="frame" x="20" y="340" width="374" height="216.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2p-VH-hSM">
+                                        <rect key="frame" x="113.5" y="0.0" width="147.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N60-yA-lrv">
+                                        <rect key="frame" x="20" y="96.5" width="334" height="4"/>
+                                        <color key="progressTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXR-R2-oSZ">
+                                        <rect key="frame" x="87" y="176.5" width="200" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Pea-O8-pKU"/>
+                                            <constraint firstAttribute="width" constant="200" id="YZk-fQ-NH6"/>
+                                        </constraints>
+                                        <state key="normal" title="Go To Feed">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="aCm-ux-Hax" eventType="touchUpInside" id="o8i-Sq-dJc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="N60-yA-lrv" firstAttribute="leading" secondItem="imk-n3-Fs1" secondAttribute="leading" constant="20" id="X5Z-nH-dC0"/>
+                                    <constraint firstAttribute="trailing" secondItem="N60-yA-lrv" secondAttribute="trailing" constant="20" id="ewB-W7-qNs"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="47a-cc-Qnw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="imk-n3-Fs1" firstAttribute="leading" secondItem="47a-cc-Qnw" secondAttribute="leading" constant="20" id="BR4-lX-jKc"/>
+                            <constraint firstItem="47a-cc-Qnw" firstAttribute="trailing" secondItem="imk-n3-Fs1" secondAttribute="trailing" constant="20" id="Fcl-T7-afd"/>
+                            <constraint firstItem="imk-n3-Fs1" firstAttribute="centerY" secondItem="uhm-hG-dJm" secondAttribute="centerY" id="K0v-bK-CsZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Add" id="csC-Gb-rJu"/>
+                    <connections>
+                        <outlet property="doneButton" destination="MXR-R2-oSZ" id="jl5-oH-bJc"/>
+                        <outlet property="progressBar" destination="N60-yA-lrv" id="nOX-B9-QLJ"/>
+                        <outlet property="progressLabel" destination="k2p-VH-hSM" id="5Ci-UY-7co"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lik-ge-y4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

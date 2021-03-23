@@ -81,6 +81,12 @@ extension MainTabBarController: UIImagePickerControllerDelegate & UINavigationCo
         
         dismiss(animated: true, completion: nil)
     }
+    
+    func goToFeed() {
+        
+        selectedIndex = 0
+    }
+    
 }
 
 
