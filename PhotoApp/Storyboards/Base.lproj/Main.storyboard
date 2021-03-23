@@ -122,6 +122,7 @@ Create your username:</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-xm-mrI">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo Cell" rowHeight="300" id="tP7-w9-8wm" customClass="PhotoCell" customModule="PhotoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
@@ -130,21 +131,22 @@ Create your username:</string>
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-95-4ke">
-                                                    <rect key="frame" x="40" y="31" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-95-4ke">
+                                                    <rect key="frame" x="40" y="31" width="50" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-22-dXP">
-                                                    <rect key="frame" x="40" y="62" width="334" height="176"/>
+                                                    <rect key="frame" x="40" y="65" width="334" height="176"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="176" id="7qa-sv-lBt"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScM-3v-rCW">
-                                                    <rect key="frame" x="40" y="248" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="40" y="251" width="35.5" height="18"/>
+                                                    <color key="tintColor" systemColor="systemGrayColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -178,7 +180,7 @@ Create your username:</string>
                             <constraint firstItem="5bB-xm-mrI" firstAttribute="top" secondItem="7Ro-H1-vix" secondAttribute="top" id="nld-vV-wHT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Feed" id="ryo-wd-15c"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Feed" image="feed" id="ryo-wd-15c"/>
                     <connections>
                         <outlet property="tableView" destination="5bB-xm-mrI" id="mTr-Ic-hFx"/>
                     </connections>
@@ -237,7 +239,7 @@ Create your username:</string>
                             <constraint firstItem="imk-n3-Fs1" firstAttribute="centerY" secondItem="uhm-hG-dJm" secondAttribute="centerY" id="K0v-bK-CsZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Add" id="csC-Gb-rJu"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Add" image="camera" id="csC-Gb-rJu"/>
                     <connections>
                         <outlet property="doneButton" destination="MXR-R2-oSZ" id="jl5-oH-bJc"/>
                         <outlet property="progressBar" destination="N60-yA-lrv" id="nOX-B9-QLJ"/>
@@ -278,7 +280,7 @@ Create your username:</string>
                             <constraint firstItem="FMM-GQ-0Is" firstAttribute="centerX" secondItem="LhF-Sy-ruQ" secondAttribute="centerX" id="umP-cx-lT2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Settings" id="cd6-X1-Evh"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Settings" image="settings" id="cd6-X1-Evh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RQ-Ce-OJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,8 +324,14 @@ Create your username:</string>
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="24" height="24"/>
+        <image name="feed" width="24" height="18"/>
+        <image name="settings" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

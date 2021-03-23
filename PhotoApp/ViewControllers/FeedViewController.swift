@@ -25,11 +25,35 @@ class FeedViewController: UIViewController {
             self.tableView.reloadData()
         }
         
+        addRefreshControl()
     }
     
 
 
+    func addRefreshControl() {
+        
+        let refresh = UIRefreshControl()
+        print("11111")
+        refresh.addTarget(self, action: #selector(refreshFeed(refreshControl:)), for: .valueChanged)
+        print("22222")
+        tableView.addSubview(refresh)
+        print("333333")
 
+    }
+
+    @objc func refreshFeed(refreshControl: UIRefreshControl) {
+        
+        PhotoService.retrievePhoto { (updatedPhotoFeed) in
+            self.photos = updatedPhotoFeed
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                refreshControl.endRefreshing()
+            }
+        }
+        
+        
+    }
+    
 }
 
 
