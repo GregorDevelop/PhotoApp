@@ -7,23 +7,80 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController{
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+        if item.tag == 2 {
+            
+            let actionSheet = UIAlertController(title: "Add a Photo", message: "Select a source", preferredStyle: .actionSheet)
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                
+                let cameraButton = UIAlertAction(title: "Camera", style: .default) { (alert) in
+                    self.showImagePickerController(mode: .camera)
+                }
+                actionSheet.addAction(cameraButton)
+            }
+            
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                let libraryButton = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+                    self.showImagePickerController(mode: .photoLibrary)
+                }
+                actionSheet.addAction(libraryButton)
+            }
+            
+            let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            actionSheet.addAction(cancelButton)
+            
+            present(actionSheet, animated: true, completion: nil)
+        }
+  
     }
-    */
+
+    func showImagePickerController(mode: UIImagePickerController.SourceType) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = mode
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
 
 }
+
+
+extension MainTabBarController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        if let selectedImage = selectedImage {
+            
+            let cameraVC = selectedViewController as? CameraViewController
+            if let cameraVC = cameraVC {
+                
+                cameraVC.savePhoto(selectedImage: selectedImage)
+            }
+            
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+

@@ -133,7 +133,7 @@ Create your username:</string>
                             <constraint firstItem="5bB-xm-mrI" firstAttribute="top" secondItem="7Ro-H1-vix" secondAttribute="top" id="nld-vV-wHT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="ryo-wd-15c"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Feed" id="ryo-wd-15c"/>
                     <connections>
                         <outlet property="tableView" destination="5bB-xm-mrI" id="mTr-Ic-hFx"/>
                     </connections>
@@ -152,7 +152,7 @@ Create your username:</string>
                         <viewLayoutGuide key="safeArea" id="47a-cc-Qnw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add" id="csC-Gb-rJu"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Add" id="csC-Gb-rJu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lik-ge-y4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,16 +188,16 @@ Create your username:</string>
                             <constraint firstItem="FMM-GQ-0Is" firstAttribute="centerX" secondItem="LhF-Sy-ruQ" secondAttribute="centerX" id="umP-cx-lT2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="cd6-X1-Evh"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Settings" id="cd6-X1-Evh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RQ-Ce-OJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3497" y="1631"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="ZIW-6s-W8p">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabBarController" id="TV2-np-DBu" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" id="TV2-np-DBu" customClass="MainTabBarController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HAf-5v-Cfi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
